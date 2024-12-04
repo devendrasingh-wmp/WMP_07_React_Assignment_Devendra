@@ -3,11 +3,8 @@ import TaskInput from './TaskInput';
 import TaskList from './TaskList';
 
 const TodoApp = () => {
-  const [tasks, setTasks] =
-  useState(() => {
-    const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
+  const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem('tasks')) || []);
+
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {

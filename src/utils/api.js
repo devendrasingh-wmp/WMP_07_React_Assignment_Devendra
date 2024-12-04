@@ -2,3 +2,4 @@ export const StateWiseCityAPI = 'https://countriesnow.space/api/v0.1/countries/s
 
 export const CountryWiseStateAPI = 'https://countriesnow.space/api/v0.1/countries/states'
 
+export const PostSelectorAPI = 'https://jsonplaceholder.typicode.com'

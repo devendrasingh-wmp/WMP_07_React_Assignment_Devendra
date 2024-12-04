@@ -1,6 +1,7 @@
 import React from 'react'
 import TodoApp from './domain/todo'
 import StateCitySelector from './domain/state_city_selector'
+import PostSelector from './domain/post_selector'
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <TodoApp/>
       <StateCitySelector/>
+      <PostSelector/>
     </div>
   )
 }
