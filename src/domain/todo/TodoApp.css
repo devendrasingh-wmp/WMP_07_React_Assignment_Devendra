@@ -1,0 +1,84 @@
+/* Root Variables */
+:root {
+  --main-bg-color: #f8f9fa;
+  --task-completed-color: #d4edda;
+  --task-pending-color: #f8d7da;
+  --button-spacing: 10px;
+}
+
+.todolist {
+  background-color: var(--main-bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todolist h1 {
+  text-align: center;
+  color: #343a40;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.task-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  margin-top: 1rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-item.completed {
+  background-color: var(--task-completed-color);
+}
+
+.task-item.pending {
+  background-color: var(--task-pending-color);
+}
+
+.task-item input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.task-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.task-item button {
+  border: none;
+  background-color: transparent;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-item button:hover {
+  color: #bd2130;
+}
+
+.task-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--button-spacing);
+  margin-top: 1rem;
+}
+
+.task-filters button {
+  width: 100px;
+}

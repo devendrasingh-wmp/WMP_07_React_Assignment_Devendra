@@ -1,0 +1,11 @@
+:root {
+
+    /* Nav bar styling */
+    --backgroundColor: rgb(44, 212, 246);
+    --linkColor: #fff;
+    --linkHoverColor: #00bcd4;
+    --fontSize: 1.5rem;
+    --fontWieght: 800;
+    --fontfamily: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --padding: 1rem 6rem;
+  }

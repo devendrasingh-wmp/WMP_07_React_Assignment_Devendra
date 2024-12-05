@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const StateDropdown = ({ states, selectedState, onSelectState }) => {
   return (
-    <div>
+    <div className="dropdown-container">
       <label htmlFor="state">State:</label>
       <select
         id="state"

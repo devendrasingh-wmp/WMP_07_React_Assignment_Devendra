@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const CityDropdown = ({ cities, selectedCity, onSelectCity }) => {
   return (
-    <div>
+    <div className="dropdown-container">
       <label htmlFor="city">City:</label>
       <select
         id="city"
@@ -10,7 +11,7 @@ const CityDropdown = ({ cities, selectedCity, onSelectCity }) => {
         onChange={(e) => onSelectCity(e.target.value)}
       >
         <option value="">Select a city</option>
-        {cities.map((city,index) => (
+        {cities.map((city, index) => (
           <option key={index} value={city}>
             {city}
           </option>

@@ -1,0 +1,78 @@
+/* Root Variables */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --card-bg-color: #ffffff;
+    --text-color: #343a40;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --spacing: 1rem;
+  }
+  
+  /* StateCitySelector Container */
+  .state-city-selector {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: var(--spacing);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+  }
+  
+  .state-city-selector h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Dropdown Styling */
+  .dropdown-container {
+    margin-bottom: var(--spacing);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: var(--spacing);
+  }
+  
+  select:focus {
+    border-color: var(--primary-color);
+  }
+  
+  /* Selection Display Styling */
+  .selection-display {
+    background-color: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: left;
+    margin-top: var(--spacing);
+  }
+  
+  .selection-display h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .selection-display p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  

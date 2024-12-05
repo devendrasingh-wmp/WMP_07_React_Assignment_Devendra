@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const SelectionDisplay = ({ selectedState, selectedCity }) => {
   return (
-    <div>
+    <div className="selection-display">
       <h3>Selected Location:</h3>
       <p>State: {selectedState || "None"}</p>
       <p>City: {selectedCity || "None"}</p>
