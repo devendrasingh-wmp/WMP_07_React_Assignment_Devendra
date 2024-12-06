@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.navbar.css';
 
@@ -7,21 +7,27 @@ import './style.navbar.css';
  * Contains links to the Todo List, Post Selector, and State & City Selector pages.
  */
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="navbar"> {/* Container for the navigation bar */}
-      <div className='logo'> {/* Logo section of the navbar */}
-            React Assignment
+      <div className="logo"> {/* Logo section of the navbar */}
+        React Assignment
       </div>
-      <ul className="nav-links"> {/* List container for navigation links */}
-        
-        {/* Link to the Todo page */}
-        <li><Link to="/todo">Todo List</Link></li>
 
-        {/* Link to the Post Selector page */}
-        <li><Link to="/post-selector">Post Selector</Link></li>
+      <button className="menu-toggle" onClick={toggleMenu}>
+        {/* Hamburger icon */}
+        ☰
+      </button>
 
-        {/* Link to the State & City Selector page */}
-        <li><Link to="/state-city-selector">State & City Selector</Link></li>
+      <ul className={`nav-links ${menuOpen ? 'active' : ''}`}> {/* List container for navigation links */}
+        <li><Link to="/todo" onClick={() => setMenuOpen(false)}>Todo List</Link></li>
+        <li><Link to="/post-selector" onClick={() => setMenuOpen(false)}>Post Selector</Link></li>
+        <li><Link to="/state-city-selector" onClick={() => setMenuOpen(false)}>State & City Selector</Link></li>
       </ul> 
     </nav>
   );

@@ -1,54 +1,92 @@
 @import url('../../variable.style.css');
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--padding);
-    background-color: var(--backgroundColor);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .logo{
-    font-family: var(--fontfamily);
-    font-size: 3rem;
-    font-weight: var(--fontWieght);
-  }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--backgroundColor);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--fontfamily);
+  font-size: 2rem;
+  font-weight: var(--fontWieght);
+  margin: 0.5rem 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 50%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: var(--linkColor);
+  text-decoration: none;
+  font-size: var(--fontSize);
+  font-weight: var(--fontWieght);
+  font-family: var(--fontfamily);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--linkHoverColor);
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--linkColor);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 720px) {
   .nav-links {
-    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    flex-basis: 50%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    display: none; /* Hidden by default for toggle functionality */
   }
-  
-  .nav-links > li {
-    margin: 0 15px;
+
+  .nav-links.active {
+    display: flex; /* Show links when active class is added */
   }
-  
-  .nav-links a {
-    color: var(--linkColor);
-    text-decoration: none;
-    font-size: var(--fontSize);
-    font-weight: var(--fontWieght);
-    font-family: var(--fontfamily);
-    transition: color 0.3s;
+
+  .menu-toggle {
+    display: block; /* Show the toggle button below 720px */
   }
-  .nav-links a:hover {
-    color: var(--linkHoverColor);
+}
+
+@media (min-width: 721px) {
+  .menu-toggle {
+    display: none; /* Hide the toggle button above 720px */
   }
-  
-  .navbar li {
-    list-style: none;
-  }
-  
-  .navbar a {
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-    
+}
