@@ -41,7 +41,13 @@
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
 }
-
+.task-item span {
+  flex: 1; /* Allows the text to take up available space */
+  margin: 0 10px; /* Adds space around the text */
+  word-wrap: break-word; /* Breaks words if they exceed the box width */
+  overflow-wrap: break-word; /* Ensures compatibility for modern browsers */
+  white-space: normal; /* Ensures the text wraps onto the next line */
+}
 .task-item.completed {
   background-color: var(--task-completed-color);
 }
@@ -82,3 +88,4 @@
 .task-filters button {
   width: 100px;
 }
+

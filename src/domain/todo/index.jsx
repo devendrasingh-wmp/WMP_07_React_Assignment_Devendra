@@ -1,74 +1,100 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import TaskInput from "./TaskInput";
+import TaskList from "./TaskList";
+import "./TodoApp.css";
 
-import TaskInput from './TaskInput';
-import TaskList from './TaskList';
-import './TodoApp.css';
-
+/**
+ * Main component for the to-do application. Manages tasks, filtering, and interactions.
+ */
 const TodoApp = () => {
-  // State to hold the list of tasks, initialized with tasks from localStorage or an empty array.
-  const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem('tasks')) || []);
+  // State to hold the list of tasks; retrieves from localStorage or initializes with an empty array
+  const [tasks, setTasks] = useState(
+    () => JSON.parse(localStorage.getItem("tasks")) || []
+  );
 
-  // State to manage the current filter for displaying tasks.
-  const [filter, setFilter] = useState('All');
+  // State to track the current filter for displaying tasks ("All", "Completed", "Pending")
+  const [filter, setFilter] = useState("All");
 
-  // Effect to update localStorage whenever the tasks state changes.
+  // Effect: Updates localStorage whenever the tasks array changes
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // Function to add a new task to the list.
+  /**
+   * Adds a new task to the task list.
+   * @param {Object} task - The new task object to be added.
+   */
   const addTask = (task) => {
-    setTasks([...tasks, { ...task, id: Date.now() }]); // Assigns a unique ID based on the current task
+    setTasks([...tasks, { ...task, id: Date.now() }]); // Assigns a unique ID to each task
   };
 
-  // Function to toggle the completion status of a task 
+  /**
+   * Toggles the completion status of a task.
+   * @param {number} taskId - The ID of the task to toggle.
+   */
   const toggleTask = (taskId) => {
     setTasks(
       tasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task // Toggles the completed property.
+        task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
   };
 
-  // Function to delete a task from the list by its ID.
+  /**
+   * Deletes a task from the task list.
+   * @param {number} taskId - The ID of the task to delete.
+   */
   const deleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId)); // Filters out the task with the given ID.
+    setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
-  // Computes the tasks to be displayed based on the current filter.
+  /**
+   * Filters the tasks based on the selected filter type.
+   * @returns {Array} Filtered list of tasks.
+   */
   const filteredTasks = tasks.filter((task) => {
-    if (filter === 'Completed') return task.completed; // Shows only completed tasks.
-    if (filter === 'Pending') return !task.completed; // Shows only pending tasks.
-    return true; // Shows all tasks.
+    if (filter === "Completed") return task.completed;
+    if (filter === "Pending") return !task.completed;
+    return true; // Default: Show all tasks
   });
 
   return (
     <div className="todolist">
-      {/* Header for the to-do list */}
+      {/* App header */}
       <h1>To-Do List</h1>
-      
-      {/* Input component for adding new tasks */}
+
+      {/* Component to input new tasks */}
       <TaskInput onAddTask={addTask} />
 
-      {/* Filter buttons to switch between All, Completed, and Pending tasks */}
+      {/* Filter buttons */}
       <div className="task-filters">
-        <button className="btn btn-primary" onClick={() => setFilter('All')}>
+        <button className="btn btn-primary" onClick={() => setFilter("All")}>
           All
         </button>
-        <button className="btn btn-success" onClick={() => setFilter('Completed')}>
+        <button
+          className="btn btn-success"
+          onClick={() => setFilter("Completed")}
+        >
           Completed
         </button>
-        <button className="btn btn-warning" onClick={() => setFilter('Pending')}>
+        <button
+          className="btn btn-warning"
+          onClick={() => setFilter("Pending")}
+        >
           Pending
         </button>
       </div>
 
-      {/* List component to display and manage tasks */}
-      <TaskList
-        tasks={filteredTasks} // Passes the filtered list of tasks.
-        onToggleTask={toggleTask} // Function to toggle task completion.
-        onDeleteTask={deleteTask} // Function to delete a task.
-      />
+      {/* Task list display or a message if no tasks are available */}
+      {filteredTasks.length > 0 ? (
+        <TaskList
+          tasks={filteredTasks}
+          onToggleTask={toggleTask}
+          onDeleteTask={deleteTask}
+        />
+      ) : (
+        <div className="text-danger">--No-task--</div>
+      )}
     </div>
   );
 };
