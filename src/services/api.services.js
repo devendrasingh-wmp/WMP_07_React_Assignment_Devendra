@@ -2,7 +2,7 @@ import axios from './axios.interceptor'; // Custom axios instance with intercept
 
 // Importing constants and API endpoints
 import { Country } from '../utils/constant'; // Country constant to specify the country for API calls
-import { APIUrl, CountryWiseStateAPI, StateWiseCityAPI } from '../utils/api'; // API endpoints for fetching states and cities
+import {  APIUrl, CountryWiseStateAPI, StateWiseCityAPI } from '../utils/api'; // API endpoints for fetching states and cities
 
 /**
  * Fetches states based on the specified country.

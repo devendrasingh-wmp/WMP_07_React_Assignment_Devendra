@@ -5,7 +5,7 @@ export const CountryWiseStateAPI = 'https://countriesnow.space/api/v0.1/countrie
 export const PostSelectorAPI = 'https://jsonplaceholder.typicode.com'
 
 export const APIUrl = {
-    post:'/post'
+    post:'/posts'
 }
 
 // Aleternative way
