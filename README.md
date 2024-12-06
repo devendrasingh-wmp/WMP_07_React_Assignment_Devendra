@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# React Component-Based Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a component-based React application. It includes the following features:
 
-## Available Scripts
+- **Navbar**: A navigation bar to switch between different pages.
+- **Post Selector**: Allows users to select and view details of posts.
+- **State & City Selector**: Enables users to select a state and a corresponding city from dropdown menus.
 
-In the project directory, you can run:
+## Folder Structure
 
-### `npm start`
+```
+WMP_TR_PROJECT
+├── public
+├── src
+│   ├── components
+│   │   ├── navbar
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Navbar.css
+│   │   ├── post_selector
+│   │   │   ├── PostDropdown.jsx
+│   │   │   ├── PostDetails.jsx
+│   │   │   └── PostSelector.jsx
+│   │   ├── state_city_selector
+│   │   │   ├── StateDropdown.jsx
+│   │   │   ├── CityDropdown.jsx
+│   │   │   ├── SelectionDisplay.jsx
+│   │   │   └── StateCitySelector.jsx
+│   ├── services
+│   │   ├── api.services.js
+│   │   └── apiConstants.js
+│   ├── utils
+│   │   └── constant.js
+│   ├── App.js
+│   ├── index.js
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js (>= 14.x)
+- npm (>= 6.x) or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/devendrasingh-wmp/WMP_07_React_Assignment_Devendra.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   cd WMP_07_React_Assignment_Devendra
+   ```
 
-### `npm run eject`
+3. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+The application will be accessible at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To build the application for production:
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The build output will be located in the `build/` directory.
 
-### Analyzing the Bundle Size
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Navbar
 
-### Making a Progressive Web App
+- File: `src/components/navbar/Navbar.jsx`
+- Provides navigation to different parts of the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Post Selector
 
-### Advanced Configuration
+- Files:
+  - `PostDropdown.jsx`: Dropdown for selecting posts.
+  - `PostDetails.jsx`: Displays details of the selected post.
+  - `PostSelector.jsx`: Manages state and renders dropdown and details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### State & City Selector
 
-### Deployment
+- Files:
+  - `StateDropdown.jsx`: Dropdown for selecting states.
+  - `CityDropdown.jsx`: Dropdown for selecting cities based on selected state.
+  - `SelectionDisplay.jsx`: Displays the selected state and city.
+  - `StateCitySelector.jsx`: Manages state and renders dropdowns and display.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Key Learnings
+
+- Understanding of React component structure and reusability.
+- Integration of external APIs for dynamic data rendering.
+- Managing application state using props and hooks.
+- Styling React components using CSS modules.
+- Building and running React applications for both development and production environments.
+- Folder structuring for better scalability and maintainability.
+
+
